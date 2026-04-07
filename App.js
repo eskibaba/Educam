@@ -11,10 +11,19 @@ import React, { useState, useRef, useEffect } from "react";
 //         Format: country code + number, no spaces e.g. "237677123456"
 // ============================================================
 const CONFIG = {
-  CAMPAY_USERNAME: "NGWAEPHRAIM4@GMAIL.COM",       // 👈 REPLACE THIS
-  CAMPAY_PASSWORD: "Eski5096@",       // 👈 REPLACE THIS
-  CAMPAY_BASE_URL: "https://demo.campay.net/api",// 👈 CHANGE TO https://campay.net/api when live
-  WHATSAPP_SUPPORT: "237682613235",              // 👈 REPLACE with your WhatsApp e.g. "237677123456"
+  CAMPAY_USERNAME: import.meta.env.VITE_CAMPAY_USERNAME,
+  CAMPAY_PASSWORD: import.meta.env.VITE_CAMPAY_PASSWORD,
+  CAMPAY_BASE_URL: import.meta.env.VITE_CAMPAY_BASE_URL,
+  WHATSAPP_SUPPORT: import.meta.env.VITE_WHATSAPP_SUPPORT,
+  ANTHROPIC_API_KEY: import.meta.env.VITE_ANTHROPIC_API_KEY,
+};
+
+
+//const CONFIG = {
+ // CAMPAY_USERNAME: "NGWAEPHRAIM4@GMAIL.COM",       // 👈 REPLACE THIS
+  //CAMPAY_PASSWORD: "Eski5096@",       // 👈 REPLACE THIS
+ // CAMPAY_BASE_URL: "https://demo.campay.net/api",// 👈 CHANGE TO https://campay.net/api when live
+ // WHATSAPP_SUPPORT: "237682613235",              // 👈 REPLACE with your WhatsApp e.g. "237677123456"
 };
 
 // ============================================================
@@ -654,7 +663,7 @@ function ChatScreen({ subject, exam, planId, onEnd }) {
     try {
       const res = await fetch("https://api.anthropic.com/v1/messages", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", "x-api-key": CONFIG.ANTHROPIC_API_KEY },
         body: JSON.stringify({
           model: "claude-sonnet-4-20250514",
           max_tokens: 1000,
