@@ -11,8 +11,8 @@ import React, { useState, useRef, useEffect } from "react";
 //         Format: country code + number, no spaces e.g. "237677123456"
 // ============================================================
 const CONFIG = {
-  CAMPAY_USERNAME: "YOUR_CAMPAY_USERNAME",       // 👈 REPLACE THIS
-  CAMPAY_PASSWORD: "YOUR_CAMPAY_PASSWORD",       // 👈 REPLACE THIS
+  CAMPAY_USERNAME: "NGWAEPHRAIM4@GMAIL.COM",       // 👈 REPLACE THIS
+  CAMPAY_PASSWORD: "Eski5096@",       // 👈 REPLACE THIS
   CAMPAY_BASE_URL: "https://demo.campay.net/api",// 👈 CHANGE TO https://campay.net/api when live
   WHATSAPP_SUPPORT: "237682613235",              // 👈 REPLACE with your WhatsApp e.g. "237677123456"
 };
